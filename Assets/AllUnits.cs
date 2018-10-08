@@ -10,6 +10,18 @@ public class AllUnits : MonoBehaviour {
     public int numUnits = 10;
     public Vector3 range = new Vector3(5, 5, 5);
 
+    public bool seekGoal = true;
+    public bool obedient = true;
+    public bool willful = false;
+    [Range(0, 200)]
+    public int neighbourDistance = 50;
+
+    [Range(0, 2)]
+    public float maxForce = 0.5f;
+
+    [Range(0, 5)]
+    public float maxVelocity = 2.0f;
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -25,8 +37,9 @@ public class AllUnits : MonoBehaviour {
             Vector3 unitPos = new Vector3(Random.Range(-range.x, range.x),
                 Random.Range(-range.y, range.y),
                 Random.Range(0, 0));
-            units[i] = Instantiate(unitPrefab, this.transform.position + unitPos, Quaternion.identity) as GameObject;
+            units[i] = Instantiate(unitPrefab, this.transform.position + unitPos, Quaternion.identity, this.transform) as GameObject;
             units[i].GetComponent<Unit>().target = target;
+            units[i].GetComponent<Unit>().manager = gameObject;
         }
 	}
     

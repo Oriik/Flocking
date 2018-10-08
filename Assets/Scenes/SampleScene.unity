@@ -389,6 +389,12 @@ MonoBehaviour:
   unitPrefab: {fileID: 1679280496833040, guid: ad0eafdd5084daf41ac6b5caf0f0d463, type: 2}
   numUnits: 100
   range: {x: 40, y: 20, z: 5}
+  seekGoal: 1
+  obedient: 1
+  willful: 0
+  neighbourDistance: 50
+  maxForce: 0.5
+  maxVelocity: 2
 --- !u!1001 &1656857058
 Prefab:
   m_ObjectHideFlags: 0
