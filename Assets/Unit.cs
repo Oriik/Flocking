@@ -122,7 +122,9 @@ public class Unit : MonoBehaviour {
         applyForce(currentForce);
     }
 
-	void Update () {
+   
+
+    void Update () {
         flock();
         goalPos = target.transform.position;
 	}
